@@ -54,7 +54,10 @@
     "bin": "sentry-dev-cli",
     "plugins": [
       "@oclif/plugin-help"
-    ]
+    ],
+    "hooks": {
+      "init": "./lib/hooks/init/currentDirectory"
+    }
   },
   "repository": "NisanthanNanthakumar/sentry-dev-cli",
   "scripts": {

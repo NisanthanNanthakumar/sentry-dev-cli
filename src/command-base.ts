@@ -10,9 +10,8 @@ export default abstract class CommandBase extends Command {
 
     env.register(
       require.resolve(`./generators/${type}`),
-      `sentry-dev-cli:${type}`,
-    )
-    await env.run(`sentry-dev-cli:${type}`, {...generatorOptions})
-
+      `sentry-dev-cli:${type}`
+    );
+    await env.run(`sentry-dev-cli:${type}`, { ...generatorOptions });
   }
 }
