@@ -1,0 +1,13 @@
+from sentry import analytics
+<%_ const klass = `${_.upperFirst(_.camelCase(event.replace(".", "_")))}Event` _%>
+
+
+class <%- klass %>(analytics.Event):
+    type = "<%- event %>"
+
+    attributes = (
+<%- attributes.map(({name, type, required}) => `        analytics.Attribute("${name}", type=${type === "string" ? "str" : "int"}, required=${required ? "True" : "False"}),`).join("\n") %>
+    )
+
+
+analytics.register(<%- klass %>)
