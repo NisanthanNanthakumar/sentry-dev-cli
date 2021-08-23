@@ -19,7 +19,7 @@ $ npm install -g sentry-dev-cli
 $ sentry-dev-cli COMMAND
 running command...
 $ sentry-dev-cli (-v|--version|version)
-sentry-dev-cli/0.0.0 darwin-x64 node-v12.22.1
+sentry-dev-cli/0.0.2 darwin-x64 node-v12.22.1
 $ sentry-dev-cli --help [COMMAND]
 USAGE
   $ sentry-dev-cli COMMAND
@@ -30,7 +30,7 @@ USAGE
 <!-- commands -->
 * [`sentry-dev-cli generate`](#sentry-dev-cli-generate)
 * [`sentry-dev-cli generate:analytics`](#sentry-dev-cli-generateanalytics)
-* [`sentry-dev-cli generate:api FILE`](#sentry-dev-cli-generateapi-file)
+* [`sentry-dev-cli generate:api RESOURCE`](#sentry-dev-cli-generateapi-resource)
 * [`sentry-dev-cli help [COMMAND]`](#sentry-dev-cli-help-command)
 
 ## `sentry-dev-cli generate`
@@ -45,7 +45,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/generate/index.ts](https://github.com/NisanthanNanthakumar/sentry-dev-cli/blob/v0.0.0/src/commands/generate/index.ts)_
+_See code: [src/commands/generate/index.ts](https://github.com/NisanthanNanthakumar/sentry-dev-cli/blob/v0.0.2/src/commands/generate/index.ts)_
 
 ## `sentry-dev-cli generate:analytics`
 
@@ -59,23 +59,22 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/generate/analytics.ts](https://github.com/NisanthanNanthakumar/sentry-dev-cli/blob/v0.0.0/src/commands/generate/analytics.ts)_
+_See code: [src/commands/generate/analytics.ts](https://github.com/NisanthanNanthakumar/sentry-dev-cli/blob/v0.0.2/src/commands/generate/analytics.ts)_
 
-## `sentry-dev-cli generate:api FILE`
+## `sentry-dev-cli generate:api RESOURCE`
 
 Create an API endpoint
 
 ```
 USAGE
-  $ sentry-dev-cli generate:api FILE
+  $ sentry-dev-cli generate:api RESOURCE
 
 OPTIONS
   -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help   show CLI help
 ```
 
-_See code: [src/commands/generate/api.ts](https://github.com/NisanthanNanthakumar/sentry-dev-cli/blob/v0.0.0/src/commands/generate/api.ts)_
+_See code: [src/commands/generate/api.ts](https://github.com/NisanthanNanthakumar/sentry-dev-cli/blob/v0.0.2/src/commands/generate/api.ts)_
 
 ## `sentry-dev-cli help [COMMAND]`
 
