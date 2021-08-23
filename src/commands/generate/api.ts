@@ -58,8 +58,8 @@ export default class Api extends CommandBase {
         class: "ProjectEndpoint",
       },
     } as any;
-    this.log(baseClass);
-    this.log(`Endpoint: ${endpoint}`);
+    // this.log(baseClass);
+    // this.log(`Endpoint: ${endpoint}`);
     const generatorOptions = {
       endpoint,
       resource: args.resource,
@@ -68,10 +68,10 @@ export default class Api extends CommandBase {
     };
     await this.generate("api", generatorOptions);
     await this.generate("urls", generatorOptions);
-
+    this.log("\n\n")
     generatorOptions["endpoint"] =
       `${baseClass}_${args.resource}_details`.toLowerCase();
-    await this.generate("urls", generatorOptions);
     await this.generate("api-details", generatorOptions);
+    await this.generate("urls", generatorOptions);
   }
 }

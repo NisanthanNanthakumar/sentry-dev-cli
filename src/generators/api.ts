@@ -1,14 +1,13 @@
 import * as _ from "lodash";
 import * as path from "path";
-import cli from 'cli-ux'
-import GeneratorBase from "../generator-base"
-
+import cli from "cli-ux";
+import GeneratorBase from "../generator-base";
 
 export default class CommandGenerator extends GeneratorBase {
   constructor(args: any, options: any) {
     super(args, options);
   }
-  
+
   async writing() {
     this.sourceRoot(path.join(__dirname, "../../templates"));
     const commandPath = this.destinationPath(
@@ -19,7 +18,6 @@ export default class CommandGenerator extends GeneratorBase {
   }
 
   async end() {
-    this.log("Success!");
-    this.log("To record analytics with Big Query:");
+      return 
   }
 }
