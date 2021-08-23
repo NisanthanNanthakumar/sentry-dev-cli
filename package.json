@@ -1,6 +1,6 @@
 {
   "name": "sentry-dev-cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "NisanthanNanthakumar",
   "bin": {
     "sentry-dev-cli": "./bin/run"
