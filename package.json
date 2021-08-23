@@ -3,9 +3,11 @@
   "version": "0.0.2",
   "author": "NisanthanNanthakumar",
   "bin": {
-    "sentry-dev-cli": "./bin/run"
+    "sentry-dev-cli": "bin/run"
   },
-  "bugs": "https://github.com/NisanthanNanthakumar/sentry-dev-cli/issues",
+  "bugs": {
+    "url": "https://github.com/NisanthanNanthakumar/sentry-dev-cli/issues"
+  },
   "dependencies": {
     "@oclif/command": "^1.8.0",
     "@oclif/config": "^1.17.0",
@@ -59,7 +61,10 @@
       "init": "./lib/hooks/init/currentDirectory"
     }
   },
-  "repository": "NisanthanNanthakumar/sentry-dev-cli",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NisanthanNanthakumar/sentry-dev-cli.git"
+  },
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",
@@ -67,5 +72,9 @@
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   },
-  "types": "lib/index.d.ts"
+  "types": "lib/index.d.ts",
+  "description": "sentry-dev-cli ==============",
+  "directories": {
+    "test": "test"
+  }
 }
