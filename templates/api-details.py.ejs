@@ -1,0 +1,29 @@
+<%_ const klass = `${_.upperFirst(_.camelCase(endpoint))}Endpoint` _%>
+from django.db.models.deletion import ProtectedError
+from django.http import Http404
+from rest_framework import status
+from <%- base.path -%> import <%- base.class %>
+from sentry.api.serializers import serialize
+from sentry.api.exceptions import ResourceDoesNotExist
+from rest_framework.serializers import ValidationError
+
+
+class <%- klass %>(<%- base.class -%>):
+    
+    def convert_args(self, request, <%- [...base.pathParams, ...pathParams].join(", ") -%>, *args, **kwargs):
+        args, kwargs = super().convert_args(request, <%- base.pathParams.join(", ") -%>, *args, **kwargs)
+
+        # Find resource
+        <%- [...pathParams].map(param => `kwargs["${param.replace("_id", "")}"] = None`).join("\n") %>
+
+        # TODO: Remove exception
+        if not <%- [...pathParams].map(param => `kwargs["${param.replace("_id", "")}"]`).join(" or ") -%>:
+            raise ResourceDoesNotExist
+
+        return (args, kwargs)
+
+    def put(self, request, <%- base.args.join(", ") -%>, <%- [...pathParams].map(param => param.replace("_id", "")).join(", ") -%>):
+        pass
+    
+    def delete(self, request, <%- base.args.join(", ") -%>, <%- [...pathParams].map(param => param.replace("_id", "")).join(", ") -%>):
+        pass

@@ -11,12 +11,19 @@ export default class Analytics extends CommandBase {
   };
   static args = [];
 
+  // TODO(nisanthan): Figure out how to run validation cleanly. Put logic in CommandBase
+  validate_event(event: string) {
+    return event.split(".").length == 2 && event === event.toLowerCase()
+  }
+  validate_attributes(attributes: any) {
+
+  }
   async run() {
     const event = await cli.prompt("Event type");
 
     let add = true;
     const attributes = [];
-    
+
     while (add) {
       if (attributes.length) {
         add = await cli.confirm("Add attribute?");

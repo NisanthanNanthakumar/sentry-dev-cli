@@ -1,0 +1,13 @@
+<%_ const klass = `${_.upperFirst(_.camelCase(endpoint))}Endpoint` _%>
+from <%- base.path -%> import <%- base.class %>
+from sentry.api.serializers import serialize
+from rest_framework import status
+from rest_framework.response import Response
+
+class <%- klass %>(<%- base.class -%>):
+
+    def get(self, request, <%- base.args.join(", ") -%>):
+        pass
+
+    def post(self, request, <%- base.args.join(", ") -%>):
+        pass
